@@ -26,17 +26,17 @@ function(to) {
                 result[o.name] = to.data.formated[o.offset] ;
             break ;
             case 'word' :
-                result[o.name] = packi( to.data.formated.slice(o.offset,2) ) ;
+                result[o.name] = packi( to.data.formated.slice(o.offset, o.offset+2) ) ;
             break ;
             case 'dword' :
-                result[o.name] = packi( to.data.formated.slice(o.offset,4) ) ;
+                result[o.name] = packi( to.data.formated.slice(o.offset, o.offset+4) ) ;
             break ;
             case 'qword' :
-                result[o.name] = packi( to.data.formated.slice(o.offset,8) ) ;
+                result[o.name] = packi( to.data.formated.slice(o.offset, o.offset+8) ) ;
             break ;
             case 'string' :
                 var f = to.data.formated[o.offset] ;
-                result[o.name] = to.data.strings[ f ] ;
+                result[o.name] = to.data.strings[ f-1 ] ; // Indexes starts from 1
             break ;
             default: error('Unknown type: ' + o.type) ;
         }
