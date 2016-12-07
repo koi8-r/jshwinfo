@@ -5,6 +5,7 @@ var SMBios = require('./smbios/SMBios.js') ;
 var unpack = require('./smbios/unpack.js') ;
 var smbiosDataExample = require('./WMI-SMBiosData-example.js') ;
 var BIOS = require('./model/BIOS.js') ;
+var Processor = require('./model/Processor.js') ;
 var Mem = require('./model/Mem.js') ;
 
 //var data = new SMBios( smbiosData() ) ;
@@ -23,6 +24,13 @@ for(var i = 0 ; i < data.to.length ; i++) {
                 print( 'BIOS ver.: ' + bios.version ) ;
                 print( 'BIOS release date: ' + bios.releaseDate ) ;
                 print( 'BIOS system ver.: ' + bios.majorVer + '.' + bios.minorVer ) ;
+            break ;
+            case 4:
+                var processor = new Processor(tbl) ;
+                print( 'Processor socket: ' +  processor.socket) ;
+                print( 'Processor type: ' +  processor.type + ' [' + processor.typeDetail() + ']') ;
+                print( 'Processor family: ' +  processor.family + ' [' + processor.familyDetail() + ']') ;
+                print( 'Processor manufacturer: ' + processor.manufacturer) ;
             break ;
             case 17:
                 var mem = new Mem(tbl) ;

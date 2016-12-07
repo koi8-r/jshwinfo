@@ -4,13 +4,13 @@
 
     @mem - Dynamic object from smbios unpack frunction.
  */
-module.exports = function Mem(unpacked) {
+module.exports = function(unpacked) {
 
     var error = require('../util/error.js') ;
 
     this.typeDetail = function(){
         return require('./MemoryType.js')[this.type] ;
-    },
+    } ;
 
     this.sizeDetail = function(){
         switch(this.size) {
@@ -26,7 +26,7 @@ module.exports = function Mem(unpacked) {
           default:
             return (this.size) ? this.size + '' : undefined ; // convert to string
         }
-    },
+    } ;
     this.sizeUnit = function() {
         // Most-significant bit (bit 15): 0 for megabytes, 1 for kilobytes
         return ( (this.size & parseInt('10000000',2)) == 0 ) ? 'MB' : 'KB' ;
