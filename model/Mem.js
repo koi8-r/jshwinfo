@@ -55,37 +55,6 @@ module.exports = function Mem(unpacked) {
     this.assetTag = null ;
     this.partNum = null ;
 
-    if(unpacked) for(var key in unpacked) {
-        switch(key) {
-            case 'size':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'bank':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'locator':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'type':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'manufacturer':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'serial':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'assetTag':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'partNum':
-              this[key] = unpacked[key] ;
-            break ;
-            case 'extSize':
-              this[key] = unpacked[key] ;
-            break ;
-            default:
-              error('Unknown field: ' + unpacked[key]) ;
-        }
-    }
+    if(unpacked) for(var key in unpacked)
+        this[key] = unpacked[key] ;
 } ;
