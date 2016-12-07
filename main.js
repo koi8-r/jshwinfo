@@ -16,7 +16,7 @@ for(var i = 0 ; i < data.to.length ; i++) {
 
     if(mem != undefined) {
       var m = new Mem(mem) ;
-      print( 'Size: ' + m.size + m.sizeUnit() + ' [' + m.sizeDetail() + ' ]') ;
+      print( 'Size: ' + m.size + m.sizeUnit() + ' [' + m.sizeDetail() + ']') ;
       print( 'Bank: ' + m.bank ) ;
       print( 'Type: ' + m.type + ' [' + m.typeDetail() + ']') ;
       print( 'Manufacturer: ' + m.manufacturer ) ;

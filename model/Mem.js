@@ -30,7 +30,7 @@ module.exports = function Mem(unpacked) {
               return 'Extended size' ;
           break ;
           default:
-            return this.size ;
+            return (this.size) ? this.size + '' : undefined ; // convert to string
         }
     },
     this.sizeUnit = function() {
