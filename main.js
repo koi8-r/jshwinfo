@@ -18,6 +18,7 @@ for(var i = 0 ; i < data.to.length ; i++) {
       var m = new Mem(mem) ;
       print( 'Size: ' + m.size + m.sizeUnit() + ' [' + m.sizeDetail() + ']') ;
       print( 'Bank: ' + m.bank ) ;
+      print( 'Device locator: ' + m.locator ) ;
       print( 'Type: ' + m.type + ' [' + m.typeDetail() + ']') ;
       print( 'Manufacturer: ' + m.manufacturer ) ;
       print( 'Serial: ' + m.serial ) ;

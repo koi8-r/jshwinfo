@@ -41,9 +41,15 @@ module.exports = function Mem(unpacked) {
     } ;
 
     this.extSize = null ;
+    this.extSizeUnit = function() {
+        // Most-significant bit (bit 31) must be 0
+        // (this.extSize & 0x80000000) == 0
+        return 'MB' ; // always MB
+    } ;
 
 
     this.bank = null ;
+    this.blocator = null ;
     this.manufacturer = null ;
     this.serial = null ;
     this.assetTag = null ;
@@ -55,6 +61,9 @@ module.exports = function Mem(unpacked) {
               this[key] = unpacked[key] ;
             break ;
             case 'bank':
+              this[key] = unpacked[key] ;
+            break ;
+            case 'locator':
               this[key] = unpacked[key] ;
             break ;
             case 'type':

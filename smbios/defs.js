@@ -2,6 +2,7 @@ module.exports = {
     // Memory device (Type 17)
     17: [
         { name: 'size',         type: 'word',   offset: 0x0C },
+        { name: 'locator',      type: 'string', offset: 0x10 },
         { name: 'bank',         type: 'string', offset: 0x11 },
         { name: 'type',         type: 'byte',   offset: 0x12 },
         { name: 'manufacturer', type: 'string', offset: 0x17 },
