@@ -5,6 +5,7 @@ var SMBios = require('./smbios/SMBios.js') ;
 var unpack = require('./smbios/unpack.js') ;
 var smbiosDataExample = require('./WMI-SMBiosData-example.js') ;
 var BIOS = require('./model/BIOS.js') ;
+var System = require('./model/System.js') ;
 var Baseboard = require('./model/Baseboard.js') ;
 var Processor = require('./model/Processor.js') ;
 var Mem = require('./model/Mem.js') ;
@@ -25,6 +26,13 @@ for(var i = 0 ; i < data.to.length ; i++) {
                 print( 'BIOS ver.: ' + bios.version ) ;
                 print( 'BIOS release date: ' + bios.releaseDate ) ;
                 print( 'BIOS system ver.: ' + bios.majorVer + '.' + bios.minorVer ) ;
+            break ;
+            case 1:
+                var system = new System(tbl) ;
+                print( 'System manufacturer: ' +  system.manufacturer) ;
+                print( 'System product: ' +  system.product) ;
+                print( 'System version: ' +  system.version) ;
+                print( 'System serial: ' +  system.serial) ;
             break ;
             case 2:
                 var baseboard = new Baseboard(tbl) ;
