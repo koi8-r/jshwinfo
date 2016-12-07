@@ -1,0 +1,9 @@
+{
+    "plugins": {
+        "es_modules": {},
+        "commonjs": {},
+        "node":{},
+        "requirejs":{},
+        "node_resolve":{}
+    }
+}
