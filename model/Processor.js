@@ -16,6 +16,9 @@ module.exports = function(unpacked) {
         return require('./ProcessorFamily.js')[this.family] ;
     } ;
 
+    this.upgradeDetail = function(){
+        return require('./ProcessorUpgrade.js')[this.upgrade] ;
+    } ;
 
     if(unpacked) for(var key in unpacked)
         this[key] = unpacked[key] ;

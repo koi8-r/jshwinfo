@@ -32,7 +32,9 @@ module.exports = {
         { name: 'socket',       type: 'string', offset: 0x04 },
         { name: 'type',         type: 'byte',   offset: 0x05 },
         { name: 'family',       type: 'byte',   offset: 0x06 },
-        { name: 'manufacturer', type: 'string', offset: 0x07 }
+        { name: 'manufacturer', type: 'string', offset: 0x07 },
+        { name: 'version',      type: 'string', offset: 0x10 },
+        { name: 'upgrade',      type: 'byte',   offset: 0x19 },
     ],
     // Port connector
     8: [

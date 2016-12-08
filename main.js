@@ -43,7 +43,7 @@ for(var i = 0 ; i < data.to.length ; i++) {
                 print( 'Baseboard product: ' +  baseboard.product) ;
                 print( 'Baseboard version: ' +  baseboard.version) ;
                 print( 'Baseboard serial: ' +  baseboard.serial) ;
-                print( 'Baseboard assetTag: ' +  baseboard.assetTag) ;
+                print( 'Baseboard asset tag: ' +  baseboard.assetTag) ;
             break ;
             case 4:
                 var processor = new Processor(tbl) ;
@@ -51,6 +51,8 @@ for(var i = 0 ; i < data.to.length ; i++) {
                 print( 'Processor type: ' +  processor.type + ' [' + processor.typeDetail() + ']') ;
                 print( 'Processor family: ' +  processor.family + ' [' + processor.familyDetail() + ']') ;
                 print( 'Processor manufacturer: ' + processor.manufacturer) ;
+                print( 'Processor version: ' + processor.version) ;
+                print( 'Processor upgrade: ' + processor.upgrade + ' [' + processor.upgradeDetail() + ']') ;
             break ;
             case 11:
                 assert( tbl.count === to.data.strings.length, 'Count of strings in header and in fact different' ) ;
