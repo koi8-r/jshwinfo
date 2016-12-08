@@ -6,6 +6,7 @@ module.exports =
     @defs - object structure definations
     @return - unpacked object
 */
+// TODO: check smbios version (memory dev: not all props by version)
 function(to) {
 
     var print = require('../util/print.js') ;

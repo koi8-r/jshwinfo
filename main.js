@@ -20,6 +20,9 @@ for(var i = 0 ; i < data.to.length ; i++) {
 
     if(tbl != undefined) {
         switch(to.type) {
+            case 127:
+                print( 'EOT') ; // End of table
+            break ;
             case 0:
                 var bios = new BIOS(tbl) ;
                 print( 'BIOS vendor: ' + bios.vendor ) ;
@@ -48,6 +51,11 @@ for(var i = 0 ; i < data.to.length ; i++) {
                 print( 'Processor type: ' +  processor.type + ' [' + processor.typeDetail() + ']') ;
                 print( 'Processor family: ' +  processor.family + ' [' + processor.familyDetail() + ']') ;
                 print( 'Processor manufacturer: ' + processor.manufacturer) ;
+            break ;
+            case 11:
+                assert( tbl.count === to.data.strings.length, 'Count of strings in header and in fact different' ) ;
+                for(var i0=0 ; i0<to.data.strings.length ; i0++) // don't use i, js problem
+                    print( 'OEM string: ' + to.data.strings[i0]) ;
             break ;
             case 17:
                 var mem = new Mem(tbl) ;
