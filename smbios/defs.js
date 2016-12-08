@@ -34,7 +34,7 @@ module.exports = {
         { name: 'family',       type: 'byte',   offset: 0x06 },
         { name: 'manufacturer', type: 'string', offset: 0x07 },
         { name: 'version',      type: 'string', offset: 0x10 },
-        { name: 'upgrade',      type: 'byte',   offset: 0x19 },
+        { name: 'upgrade',      type: 'byte',   offset: 0x19 }
     ],
     // Port connector
     8: [
@@ -46,7 +46,7 @@ module.exports = {
     ],
     // OEM Strings
     11: [
-        { name: 'count',        type: 'byte',   offset: 0x04 },
+        { name: 'count',        type: 'byte',   offset: 0x04 }
     ],
     // Memory device (Type 17)
     17: [

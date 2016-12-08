@@ -37,7 +37,8 @@ function(to) {
             break ;
             case 'string' :
                 var f = to.data.formated[o.offset] ;
-                result[o.name] = to.data.strings[ f-1 ] ; // Indexes starts from 1
+                var s = to.data.strings[ f-1 ].trim() ;
+                result[o.name] = ( s.length > 0 ) ? s : null ; // Indexes starts from 1
             break ;
             default: error('Unknown type: ' + o.type) ;
         }

@@ -1,3 +1,6 @@
 module.exports = function() {
-    this.memory = []
+    this.bios = [] ;
+    this.baseboard = [] ;
+    this.processor = [] ;
+    this.memory = [] ;
 }
