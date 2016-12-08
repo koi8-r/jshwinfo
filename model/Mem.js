@@ -8,36 +8,32 @@ module.exports = function(unpacked) {
 
     var error = require('../util/error.js') ;
 
-    this.typeDetail = function(){
-        return require('./MemoryType.js')[this.type] ;
-    } ;
+    if(unpacked) {
+        for(var key in unpacked)
+            this[key] = unpacked[key] ;
 
-    this.sizeDetail = function(){
+        this.typeDetail = require('./MemoryType.js')[this.type] ;
+
         switch(this.size) {
           case 0x0:
-              return 'Not installed' ;
+              this.sizeDetail = 'Not installed' ;
           break ;
           case 0xFFFF:
-              return 'Unknown' ;
+              this.sizeDetail = 'Unknown' ;
           break ;
           case 0x7FFF:
-              return 'Extended size' ;
+              this.sizeDetail = 'Extended size' ;
           break ;
           default:
-            return (this.size) ? this.size + '' : undefined ; // convert to string
+            this.sizeDetail = (this.size) ? this.size + '' : undefined ; // convert to string
         }
-    } ;
-    this.sizeUnit = function() {
-        // Most-significant bit (bit 15): 0 for megabytes, 1 for kilobytes
-        return ( (this.size & parseInt('10000000',2)) == 0 ) ? 'MB' : 'KB' ;
-    } ;
 
-    this.extSizeUnit = function() {
         // Most-significant bit (bit 31) must be 0
         // (this.extSize & 0x80000000) == 0
-        return 'MB' ; // always MB
+        this.extSizeUnit = 'MB' ; // always MB
+
+        // Most-significant bit (bit 15): 0 for megabytes, 1 for kilobytes
+        this.sizeUnit = ( (this.size & parseInt('10000000',2)) == 0 ) ? 'MB' : 'KB' ;
     } ;
 
-    if(unpacked) for(var key in unpacked)
-        this[key] = unpacked[key] ;
 } ;

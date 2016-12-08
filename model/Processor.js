@@ -8,18 +8,12 @@ module.exports = function(unpacked) {
 
     var error = require('../util/error.js') ;
 
-    this.typeDetail = function(){
-        return require('./ProcessorType.js')[this.type] ;
-    } ;
+    if(unpacked) {
+        for(var key in unpacked)
+            this[key] = unpacked[key] ;
 
-    this.familyDetail = function(){
-        return require('./ProcessorFamily.js')[this.family] ;
-    } ;
-
-    this.upgradeDetail = function(){
-        return require('./ProcessorUpgrade.js')[this.upgrade] ;
-    } ;
-
-    if(unpacked) for(var key in unpacked)
-        this[key] = unpacked[key] ;
+        this.typeDetail = require('./ProcessorType.js')[this.type] ;
+        this.familyDetail = require('./ProcessorFamily.js')[this.family] ;
+        this.upgradeDetail = require('./ProcessorUpgrade.js')[this.upgrade] ;
+    }
 } ;

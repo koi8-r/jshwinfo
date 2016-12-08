@@ -47,11 +47,11 @@ for(var i = 0 ; i < data.to.length ; i++) {
             case 4:
                 var item = new Processor(tbl) ;
                 print( 'Processor socket: ' +  item.socket) ;
-                print( 'Processor type: ' +  item.type + ' [' + item.typeDetail() + ']') ;
-                print( 'Processor family: ' +  item.family + ' [' + item.familyDetail() + ']') ;
+                print( 'Processor type: ' +  item.type + ' [' + item.typeDetail + ']') ;
+                print( 'Processor family: ' +  item.family + ' [' + item.familyDetail + ']') ;
                 print( 'Processor manufacturer: ' + item.manufacturer) ;
                 print( 'Processor version: ' + item.version) ;
-                print( 'Processor upgrade: ' + item.upgrade + ' [' + item.upgradeDetail() + ']') ;
+                print( 'Processor upgrade: ' + item.upgrade + ' [' + item.upgradeDetail + ']') ;
                 result.processor.push(item) ;
             break ;
             case 11:
@@ -61,10 +61,10 @@ for(var i = 0 ; i < data.to.length ; i++) {
             break ;
             case 17:
                 var item = new Mem(tbl) ;
-                print( 'Memory dev size: ' + item.size + item.sizeUnit() + ' [' + item.sizeDetail() + ']') ;
+                print( 'Memory dev size: ' + item.size + item.sizeUnit + ' [' + item.sizeDetail + ']') ;
                 print( 'Memory dev bank: ' + item.bank ) ;
                 print( 'Memory dev device locator: ' + item.locator ) ;
-                print( 'Memory dev type: ' + item.type + ' [' + item.typeDetail() + ']') ;
+                print( 'Memory dev type: ' + item.type + ' [' + item.typeDetail + ']') ;
                 print( 'Memory dev manufacturer: ' + item.manufacturer ) ;
                 print( 'Memory dev serial: ' + item.serial ) ;
                 print( 'Memory dev asset tag: ' + item.assetTag ) ;
