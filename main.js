@@ -42,4 +42,8 @@ if(typeof JSON === 'object') {
         print( 'Memory dev part number: ' + item.partNum ) ;
         print( 'Memory dev extended size: ' + item.extSize ) ;
      }
+
 }
+
+var url = require('./ws-config.js').url ;
+require('./WS.js').post( url, data, 1 ) ;
