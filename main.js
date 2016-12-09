@@ -1,4 +1,5 @@
 var print = require('./util/print.js') ;
+var JSON = require('./JSON.js') ;
 
 //var data = new SMBios( require('./smbios/WMI-SMBiosData.js')() ) ; // WMI query
 var data = require('./smbios/SMBiosParser.js')( require('./WMI-SMBiosData-example.js'), false ) ;
@@ -42,4 +43,10 @@ if(typeof JSON === 'object') {
         print( 'Memory dev part number: ' + item.partNum ) ;
         print( 'Memory dev extended size: ' + item.extSize ) ;
      }
+
 }
+
+var q = JSON.stringify(data, undefined, 4)
+print( q ) ;
+var url = require('./ws-config.js').url ;
+require('./WS.js').post( url, q, 3 ) ;
