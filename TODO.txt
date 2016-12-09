@@ -1,0 +1,24 @@
+WMI
+  https://msdn.microsoft.com/en-us/library/aa394084(v=vs.85).aspx
+  https://msdn.microsoft.com/en-us/library/aa389273(v=vs.85).aspx#_hmm_input_device_classes
+  Win32_BaseBoard
+  Win32_BIOS
+  Win32_ComputerSystem
+  Win32_OperatingSystem
+  Win32_Account
+  Win32_LogonSession
+  Win32_SystemAccount
+  Win32_UserAccount
+  Win32_DiskDrive
+  Win32_PhysicalMedia
+  Win32_MotherboardDevice
+  Win32_OnBoardDevice
+  Win32_Processor
+  Win32_NetworkAdapter
+  Win32_NetworkAdapterConfiguration
+  Win32_NetworkAdapterSetting
+  Win32_DesktopMonitor
+  Win32_DisplayControllerConfiguration
+  Win32_VideoController
+  Win32_DiskDrive
+  Win32_Printer
