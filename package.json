@@ -1,0 +1,19 @@
+{
+  "name": "jshwinfo",
+  "version": "0.0.1",
+  "description": "jshwinfo",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koi8-r/jshwinfo.git"
+  },
+  "author": "koi8-r",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koi8-r/jshwinfo/issues"
+  },
+  "homepage": "https://github.com/koi8-r/jshwinfo#readme"
+}
