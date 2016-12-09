@@ -11,6 +11,9 @@ module.exports = {
         filename: "[name].js" // name replace with entry value
     },
     plugins: [
+        new webpack.DefinePlugin({
+            _WinOS: JSON.stringify(process.env.OS, undefined, 4)
+        }),
         new webpack.optimize.UglifyJsPlugin({
             include: /\.min\.js$/,
             compress: {

@@ -20,9 +20,9 @@ module.exports = function() {
 
     var result = [] ;
 
-    for(var e = new Enumerator(wmio.SMBiosData.toArray()) ; !e.atEnd() ; e.moveNext()) {
-        result.push(e.item()) ;
-    }
+    var items = require('./util/VBSList.js')( pcItems ) ;
+    for(var i=0 ; i<items.length ; i++ )
+        result.push(items[i]) ;
 
     return result ;
 } ;
