@@ -4,7 +4,8 @@ module.exports = {
     entry: {
         main:       "./main",
         'main.min': "./main",
-        test:       "./test"
+        test:       "./test",
+        'test.es6': "./test.es6"
     },
     output: {
         path: './dist',
@@ -20,5 +21,18 @@ module.exports = {
                 warnings: false
             }
         })
-    ]
+    ],
+    module: {
+        // Without config: require("babel!./Util.js") or require("babel!./Util.js").default
+        loaders: [
+            {
+                test: /\.es6\.js$/,
+                loader: "babel-loader",
+                exclude: /node_modules/,
+                query: {
+                    presets: [ 'latest' ] // no need .babelrc
+                }
+            }
+        ]
+    }
 } ;

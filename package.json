@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/koi8-r/jshwinfo/issues"
   },
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-polyfill": "*",
+    "babel-preset-latest": "*",
+    "exports-loader": "*",
+    "webpack": "*"
+  },
   "homepage": "https://github.com/koi8-r/jshwinfo#readme"
 }
