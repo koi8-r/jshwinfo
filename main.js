@@ -4,9 +4,7 @@ var JSON = require('./JSON.js') ;
 //var data = new SMBios( require('./smbios/WMI-SMBiosData.js')() ) ; // WMI query
 var data = require('./smbios/SMBiosParser.js')( require('./WMI-SMBiosData-example.js'), false ) ;
 
-if(typeof JSON === 'object') {
-    print( JSON.stringify(data,'',4) ) ;
-} else {
+if(typeof JSON !== 'object') {
     for(var i = 0 ; i < data.bios.length ; i++) {
         var item = data.bios[i] ;
         print( 'BIOS vendor: ' + item.vendor ) ;
@@ -44,9 +42,8 @@ if(typeof JSON === 'object') {
         print( 'Memory dev extended size: ' + item.extSize ) ;
      }
 
+} else {
+    var q = JSON.stringify(data, undefined, 4) ;
+    print( q ) ;
+    require('./WS.js').post( require('./ws-config.js').url, q, 3 ) ;
 }
-
-var q = JSON.stringify(data, undefined, 4)
-print( q ) ;
-var url = require('./ws-config.js').url ;
-require('./WS.js').post( url, q, 3 ) ;

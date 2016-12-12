@@ -4,7 +4,13 @@ module.exports = {
         var assert = require('./util/assert.js') ;
         var error = require('./util/error.js') ;
         var print = require('./util/print.js') ;
-        var ua = require('./MS-XMLHTTP.js') ;
+
+        try {
+            var ua = require('./MS-XMLHTTP.js') ;
+        } catch (ex) {
+            print('Skip POST data') ;
+            return ;
+        }
 
         var maxTries = tries || 10 ;
         while(true){
