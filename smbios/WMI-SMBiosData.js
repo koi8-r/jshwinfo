@@ -20,7 +20,7 @@ module.exports = function() {
 
     var result = [] ;
 
-    var items = require('./util/VBSList.js')( pcItems ) ;
+    var items = require('./util/VBSList.js')( wmio.SMBiosData.toArray() ) ;
     for(var i=0 ; i<items.length ; i++ )
         result.push(items[i]) ;
 
